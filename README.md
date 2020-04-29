@@ -1,7 +1,9 @@
 ### Tengine + PHP for Docker
 
 ---
-
+* 更新日志
+ * 2020-4-29 添加composer支持。
+ 
 * 安装环境
   * Tengine `version 2.3.2`
   * PHP `version 7.4.3`
