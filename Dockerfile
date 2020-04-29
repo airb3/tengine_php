@@ -48,13 +48,19 @@ RUN apt update && apt install -y php7.4-mbstring php7.4 php7.4-fpm php7.4-curl v
     --with-file-aio \
     --with-ipv6 \
     && make && make install \
+    && rm -rf composer_setup \
     && rm -rf /etc/nginx/nginx.conf \
     && cd .. \
     && rm -rf tengine*
+    # 下载composer，网络问题，注释
+    # && curl https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer >> composer_setup \
+    # && php composer_setup \
+    # && mv composer.phar /usr/bin/composer
 
 COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 COPY ./conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 COPY ./conf/cert /etc/nginx/cert
+COPY ./composer /usr/bin/composer
 
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
