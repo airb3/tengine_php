@@ -3,7 +3,12 @@
 ---
 * 更新日志
   * 2020-4-29 添加composer支持。
- 
+
+* 如果你不想自己去安装环境，你可以从`DockerHub`拉取镜像。
+```
+$ docker pull ijoery/tengine_php:latest
+```
+
 * 安装环境
   * Tengine `version 2.3.2`
   * PHP `version 7.4.3`
