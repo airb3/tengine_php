@@ -2,7 +2,7 @@
 
 ---
 * 更新日志
- * 2020-4-29 添加composer支持。
+  * 2020-4-29 添加composer支持。
  
 * 安装环境
   * Tengine `version 2.3.2`
