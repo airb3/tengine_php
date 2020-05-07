@@ -2,8 +2,36 @@ FROM ubuntu
 RUN rm -rf /etc/apt/sources.list \
     && mkdir -p /etc/php/7.4/fpm/pool.d/
 COPY ./conf/sources.list /etc/apt/sources.list
+COPY ./conf/timezone /etc/timezong
 
-RUN apt update && apt install -y php7.4-mbstring php7.4 php7.4-fpm php7.4-curl vim gcc g++ make libpcre3 libpcre3-dev openssl libssl-dev curl net-tools \
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && apt update && apt install -y tzdata \
+    php7.4 \
+    php7.4-mbstring \
+    php7.4-fpm \
+    php7.4-zip \
+    php7.4-curl \
+    php7.4-bz2 \
+    php7.4-cgi \
+    php7.4-pgsql \
+    php7.4-json \
+    php7.4-common \
+    php7.4-xml \
+    php7.4-sqlite3 \
+    php7.4-mysql \
+    php7.4-sybase \
+    php7.4-xsl \
+    php7.4-gd \
+    vim \
+    gcc \
+    g++ \
+    make \
+    libpcre3 \
+    libpcre3-dev \
+    openssl \
+    libssl-dev \
+    curl \
+    net-tools \
     && apt install -y ruby \
     && apt install -y zlib1g-dev \
     && useradd nginx \
