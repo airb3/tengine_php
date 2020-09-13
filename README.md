@@ -3,10 +3,11 @@
 ---
 * 更新日志
   * 2020-4-29 添加composer支持。
+  * 2020-9-13 解决了tp中PATHINFO路由重写问题 访问示例：`http://localhost/api/$1`
 
-* 如果你不想自己去安装环境，你可以从`DockerHub`拉取镜像。
+* 如果你不想自己去安装环境，你可以从`DockerHub`拉取镜像，或者
 ```
-$ docker pull ijoery/tengine_php:latest
+$ docker pull ijoery/tpwork:latest
 ```
 
 * 安装环境
