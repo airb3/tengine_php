@@ -1,11 +1,12 @@
 version: '3'
 services: 
-    tengine_php:
-        build: 
-            dockerfile: Dockerfile
-            context: .
+    tpwork:
+        # build: 
+        #     dockerfile: Dockerfile
+        #     context: .
+        image: ijoery/tpwork:latest
         ports: 
             - "80:80"
             - "443:443"
         volumes: 
-            - "./src:/etc/nginx/project/"
+            - "./tpwork:/etc/nginx/project/"
